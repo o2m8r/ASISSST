@@ -6,7 +6,7 @@ var error = "Error! Please input number from 1-5 :)";
 do{
 var check=0,flag1=0,flag2=0;
 var score;
-var input1,input2,input3,input4,input5;
+var input1,input2;
 score = prompt("[+] ASISSST v2017.1 [+]\n\nEnter score from 1-5 \nOr Combo Number(45)\nRemember that: \n5 is the highest grade and \n1 is the lowest grade","");
  if (score.length < 1) {
     check=1;
@@ -62,10 +62,11 @@ if(flag1 === 1){
     }
   }
 }
+/*
     for(x=0;x<=19;x++){
         document.getElementsByClassName('btn btn-success next')[x].click();
 }
+*/
  
 alert("Script done executing :)\n"+thanks);
-f0=document.forms[0];
-f0['btnSave'].click();
+document.getElementsByName('btnSave')[0].click();
