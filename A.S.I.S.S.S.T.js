@@ -7,15 +7,26 @@ function cancel(){
 			document.body.lastChild.setAttribute('style','display:none');
 			asissstdiv.innerHTML='';
 }
+function show(){
+	document.getElementById('message').style.display = 'block';
+	document.getElementById('message').style.visibility = 'visible';
+	document.getElementById('addNote').style.display = 'none';
+	document.getElementById('addNote').style.visibility = 'hidden';
+	document.getElementById('letEmNo').style.display = 'block';
+	document.getElementById('letEmNo').style.visibility = 'visible';
+}
 function shooter(){
 		var score = document.getElementById("score").value;
 		var btn = document.getElementById("btnPressed").value;
+		var message = document.getElementById("message").value;
+		var gunShot = document.getElementById("sound"); 
 
+		document.getElementById('CM').value = message;
 		
 		if (score.length > 0 && btn == "true") {
-
+			gunShot.play();
 			clearInterval(bulletGrabber);
-			cancel();
+			
 			var radios = document.querySelectorAll('input[type=radio]');
 			var nameCount = {};
 			for (var i = 0, name; i < radios.length; i++) {
@@ -32,9 +43,10 @@ function shooter(){
 				}
 			}
 			alert("Script done executing :)\n"+thanks);
+			cancel();
 			document.getElementsByName('btnSave')[0].click();
 		}else if(score == "" && btn == "true"){
-
+			gunShot.play();
 			document.getElementById("btnPressed").value = "false";
 			alert("Please select your bullet.");		
 		}
@@ -44,26 +56,32 @@ function asissst(){
 		asissstdiv = document.createElement('div');
 		asissstdiv.setAttribute('id', 'popup');
 		asissstdiv.setAttribute('style', 'position:absolute; top:15%; left:27.5%;z-index:56; background-color:#ffffff;');
-		asissstdiv.style.backgroundImage = "url('https://hdwallsource.com/img/2014/5/free-sniper-wallpaper-16812-17353-hd-wallpapers.jpg')"; 
+		asissstdiv.style.backgroundImage = "url('https://raw.githubusercontent.com/theykneel/ASISSST/master/sniper-silhouette.jpg')"; 
 		asissstdiv.style.backgroundRepeat = 'round';
 		document.body.appendChild(asissstdiv);
 
-		
-		var windowStyle = 'style="height:350px;width:600px;padding:3px;border: 3px solid red;color:brown;"';
+		var audioSound = 'https://raw.githubusercontent.com/theykneel/ASISSST/master/Sniper_Rifle.mp3';
+		var windowStyle = 'style="height:375px;width:600px;padding:3px;border: 3px solid red;color:brown;"';
 		var windowTitle = 'style="text-align:center;font-size:40px;"';
 		var windowSubTitle = 'style="text-align:center;font-size:10px;color:brown;"';
 		var windowLeft = 'style="width:50%;float:left;text-indent:10px;"';
 		var windowRight = 'style="width:50%;float:right;"';
 		var facultyStyle = 'style=""';
 		var copyright = 'style="text-align:center;color:lime;"';
-		var btnFire = 'style="color:white;background-color:red;"';
+		var btnFire = 'style="color:white;background-color:red;margin-left:10px;"';
 		var faculty = document.getElementsByTagName('h3')[1].innerHTML;
+		var textArea = 'style="visibility: hidden;display: none;resize:vertical;margin-left:10px;"';
+		var btnAddNote = 'style="color:white;background-color:red;margin-left:10px;"';
+		var hide = 'style="visibility: hidden;display: none;"';
 		
 		asissstdiv.innerHTML= '<div '+ windowStyle +'>'+
 		'<button style="float:right;color:white;background-color:red;" onclick="cancel();">X</button><br><p '+ windowTitle +'><b>A.S.I.S.S.S.T.</b><br>'+
 		'<a '+ windowSubTitle +'>Automated SIS Survey ScripT</a></p>'+
 		'<div '+ windowLeft +'>Faculty Name:<div><a style="text-indent:10px;color:red;">├┘</a></div>'+
 		'<div '+ facultyStyle +'><a style="text-indent:10px;color:red;">└─-</a> '+ faculty +'</div>'+
+		'<br><button onclick="show();" id="addNote" '+ btnAddNote +'>Add note</button>'+
+		'<p id="letEmNo" '+ hide +'>Let \'em kno wat u feel ;)</p>'+
+		'<textarea name="message" rows="4" cols="33" id="message" '+ textArea +'></textarea>'+
 		'</div><div '+ windowRight +'>Choose your bullet:<br>'+
 		'<a style="text-indent:10px;color:red;">'+
 		' ├─-</a><input type="radio" id="score5" name="score" value="1" onchange="document.getElementById(\'score\').value=1" onkeydown="document.getElementById(\'btnPressed\').value=\'true\'"/>Outstanding Bullet<br>'+
@@ -78,7 +96,7 @@ function asissst(){
 		'<a style="text-indent:10px;color:red;">'+
 		' └─-</a><input type="button" name="btnSubmit" value="Fire!" onclick="document.getElementById(\'btnPressed\').value=\'true\'" '+ btnFire +'/></div></div>'+
 		'<input type="hidden" id="btnPressed" name="btnPressed" value="false" />'+
-		'<div '+ copyright +'>&copyScarface</div><input type="hidden" id="score" value="">';
+		'<div '+ copyright +'>&copyScarface</div><input type="hidden" id="score" value=""><audio id="sound"><source src="'+ audioSound +'" type="audio/mp3"></audio>';
 
 		bulletGrabber = setInterval(shooter,1000);
 		
