@@ -1,9 +1,7 @@
 # ASISSST
 <br><br>
-<b>ASISSST UI SCREENSHOTS</b><br>
-<img src="https://raw.githubusercontent.com/theykneel/ASISSST/master/asissst-ui.png">
-<img src="https://raw.githubusercontent.com/theykneel/ASISSST/master/asissst-ui2.png">
 
+<img src="https://raw.githubusercontent.com/theykneel/ASISSST/master/asissst-ui.png">
 
 
 # Automated SIS Survey ScripT:<br>
@@ -30,7 +28,10 @@
 # NOTE:<br>
 <b>--> If you notice that the rating below is not updating,  just change your first answer to fix this. You will see that the rating will be updated.</b>
 
+<b>ASISSST UI SCREENSHOTS</b><br>
+<img src="https://raw.githubusercontent.com/theykneel/ASISSST/master/asissst-ui.png">
+<img src="https://raw.githubusercontent.com/theykneel/ASISSST/master/asissst-ui2.png">
 
 # Thanks to:<br>
-	 https://hdwallsource.com/ for background image<br>
-	 https://github.com/beefproject/beef for background dimming and idea<br>
+	 https://hdwallsource.com/ for background image
+	 https://github.com/beefproject/beef for background dimming and idea
