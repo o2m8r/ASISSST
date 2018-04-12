@@ -57,12 +57,12 @@ function asissst(){
 		asissstdiv = document.createElement('div');
 		asissstdiv.setAttribute('id', 'popup');
 		asissstdiv.setAttribute('style', 'position:absolute; top:15%; left:27.5%;z-index:56; background-color:#ffffff;');
-		asissstdiv.style.backgroundImage = "url('https://raw.githubusercontent.com/theykneel/ASISSST/master/sniper-silhouette.jpg')"; 
+		asissstdiv.style.backgroundImage = "url('https://raw.githubusercontent.com/theykneel/ASISSST/master/images/sniper-silhouette.jpg')"; 
 		asissstdiv.style.backgroundRepeat = 'round';
 		document.body.appendChild(asissstdiv);
 
-		var fireSound = 'https://raw.githubusercontent.com/theykneel/ASISSST/master/Sniper_Rifle.mp3';
-		var noAmmo = 'https://raw.githubusercontent.com/theykneel/ASISSST/master/Out-Of-Ammo.mp3';
+		var fireSound = 'https://raw.githubusercontent.com/theykneel/ASISSST/master/audios/Sniper_Rifle.mp3';
+		var noAmmo = 'https://raw.githubusercontent.com/theykneel/ASISSST/master/audios/Out-Of-Ammo.mp3';
 		var windowStyle = 'style="height:375px;width:600px;padding:3px;border: 3px solid red;color:brown;"';
 		var windowTitle = 'style="text-align:center;font-size:40px;"';
 		var windowSubTitle = 'style="text-align:center;font-size:10px;color:brown;"';
