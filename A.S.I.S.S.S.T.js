@@ -2,6 +2,8 @@ javascript:
 
 var thanks ="Thank you for using A.S.I.S.S.S.T.\n\n\t\t\t\t\t-Scarface\n\nExiting. . .";
 asissst();
+window.location.href = '#';
+console.log('Done ;)');
 
 function cancel(){
 			document.body.lastChild.setAttribute('style','display:none');
